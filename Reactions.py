@@ -3,44 +3,44 @@ import time
 import random
 
 
-print "Let's measure your reaction time."
-print "Do you want to play?"
+print ("Let's measure your reaction time.")
+print ("Do you want to play?")
 vec = []
 
 while True:
     global play
-    play = raw_input("y/n? :")
+    play = input("y/n? :")
     if play == 'y':
-        print "Press the return key when prompted"
+        print ("Press the return key when prompted")
         break
     elif play == 'n':
-        print "Goodbye!"
+        print ("Goodbye!")
         break
     else:
-        print "Please enter y or n"
+        print ("Please enter y or n")
 
 while play == 'y':
-    print "Press return when you are ready."
-    ready = raw_input(">")
+    print ("Press return when you are ready.")
+    ready = input(">")
     delay = random.uniform(0,3)
     time.sleep(delay)
-    print "Ready, go!"
+    print ("Ready, go!")
     start = time.time()
-    reaction = raw_input(">")
+    reaction = input(">")
     end = time.time()
     speed = end - start
     vec.append(speed)
-    print "Your reaction time is ", speed, " seconds."
-    print "Do you want to play again?"
-    again = raw_input("y/n? :")
+    print ("Your reaction time is ", speed, " seconds.")
+    print ("Do you want to play again?")
+    again = input("y/n? :")
     if again == 'y':
         play = 'y'
     else:
-        print "Thanks for playing"
+        print ("Thanks for playing")
         break
 
 
-print "Your average reaction time is ", sum(vec)/len(vec), " seconds."
+print ("Your average reaction time is ", sum(vec)/len(vec), " seconds.")
 
 time.sleep(2)
        
